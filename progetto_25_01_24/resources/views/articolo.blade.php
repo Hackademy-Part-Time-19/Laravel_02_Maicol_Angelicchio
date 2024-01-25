@@ -3,10 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contatti</title>
+    <title>Articolo</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-
+    <h1>DETTAGLIO ARTICOLO</h1>
+    <div>
+        <h5>{{$articoli['titolo']}}</h5>
+        <h5>{{$articoli['descrizione']}}</h5>
+        <h5>{{$articoli['categoria']}}</h5>
+    </div>
 </body>
 </html>
