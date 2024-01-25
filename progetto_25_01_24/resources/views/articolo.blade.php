@@ -9,9 +9,9 @@
 <body>
     <h1>DETTAGLIO ARTICOLO</h1>
     <div>
-        <h5>{{$articoli['titolo']}}</h5>
-        <h5>{{$articoli['descrizione']}}</h5>
-        <h5>{{$articoli['categoria']}}</h5>
+        <h5>Prodotto: {{$articolo['titolo']}}</h5>
+        <h5>Descrizione: {{$articolo['descrizione']}}</h5>
+        <h5>Categoria: {{$articolo['categoria']}}</h5>
     </div>
 </body>
 </html>
