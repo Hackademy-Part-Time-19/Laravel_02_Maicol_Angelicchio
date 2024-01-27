@@ -14,13 +14,15 @@
     </ul>
 
     <div class="container mt-5">
-        @foreach($articoli as $indice => $articolo)
-            <div class="card" style="width: 18rem;">
-                <h5 class="card-title">{{$articolo['titolo']}}</h5>
-                <p class="card-text">{{$articolo['categoria']}}</p>
-                <a href="{{ route('articolo', ['id'=>$indice])}}">Dettaglio</a>
-            </div>
-        @endforeach
+        <div class="row">
+            @foreach($articoli as $indice => $articolo)
+                <div class="card" style="width: 18rem;">
+                    <h5 class="card-title">{{$articolo['titolo']}}</h5>
+                    <p class="card-text">{{$articolo['categoria']}}</p>
+                    <a href="{{ route('articolo', ['id'=>$indice])}}">Dettaglio</a>
+                </div>
+            @endforeach
+        </div>
     </div>
 
 </body>
