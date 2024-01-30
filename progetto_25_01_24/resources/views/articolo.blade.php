@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-    <a href="{{ route('articoli')}}">Articoli</a>
+    <x-navbar/>
     <h1>DETTAGLIO ARTICOLO</h1>
     <div>
         <h5>Prodotto: {{$articolo['titolo']}}</h5>
