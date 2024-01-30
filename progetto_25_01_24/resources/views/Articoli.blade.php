@@ -4,7 +4,10 @@
     <div class="container mt-5">
         <div class="row">
             @foreach($articoli as $indice => $articolo)
-                <x-card :titolo="$articolo['titolo']" :categoria="$articolo['categoria']" :indice="$indice"/>
+                <x-card
+                :titolo="$articolo['titolo']"
+                :categoria="$articolo['categoria']"
+                :indice="$indice"/>
             @endforeach
         </div>
     </div>
