@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\ArticleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,29 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    $titolo = "IL BLOG DI MAICOL";
-    return view('homepage', ['titolo'=>$titolo]);
-})->name('home');
-Route::get('/articoli', function () {
-    $articoli = [
-        ['titolo'=>'Telefono', 'descrizione'=>'È un telefono', 'categoria'=>'Elettronica'],
-        ['titolo'=>'Divano', 'descrizione'=>'È un divano', 'categoria'=>'Mobili'],
-        ['titolo'=>'Pentola', 'descrizione'=>'È una pentola', 'categoria'=>'Cucina'],
-        ['titolo'=>'Tuta', 'descrizione'=>'È una tuta sportiva', 'categoria'=>'Sport']
-    ];
-    return view('articoli', ['articoli'=>$articoli]);
-})->name('articoli');
-Route::get('/chi-sono', function () {
-    return view('contatti');
-})->name('contatti');
+Route::get('/', [PageController::class, 'homepage'])->name('home');
 
-Route::get('/articolo/{id}', function ($id) {
-    $articoli = [
-        ['titolo'=>'Telefono', 'descrizione'=>'È un telefono', 'categoria'=>'Elettronica'],
-        ['titolo'=>'Divano', 'descrizione'=>'È un divano', 'categoria'=>'Mobili'],
-        ['titolo'=>'Pentola', 'descrizione'=>'È una pentola', 'categoria'=>'Cucina'],
-        ['titolo'=>'Tuta', 'descrizione'=>'È una tuta sportiva', 'categoria'=>'Sport']
-    ];
-    return view('articolo', ['articolo'=>$articoli[$id]]);
-})->name('articolo');
+Route::get('/chi-sono', [PageController::class, 'contatti'])->name('contatti');
+
+Route::get('/articoli', [ArticleController::class, 'articoli'])->name('articoli');
+
+Route::get('/articolo/{id}', [ArticleController::class, 'articoloSingolo'])->name('articolo');
